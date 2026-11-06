@@ -293,7 +293,8 @@ fieldset {
     display: none;
 }
 
-[aria-invalid="true"] {
+/* El borde rojo acompaña al mensaje de texto; el color nunca es la única señal (WCAG 1.4.1) */
+.campo input[aria-invalid="true"] {
     border-color: var(--color-error);
     border-width: 3px;
 }
@@ -301,8 +302,15 @@ fieldset {
 .resumen-errores {
     padding: 0.75rem 1rem;
     margin-bottom: 1rem;
-    border: 2px solid var(--color-error);
+    color: var(--color-texto);
+    background-color: #fdecec;
+    border: 3px solid var(--color-error);
     border-radius: 0.25rem;
+}
+
+.resumen-errores h2 {
+    margin-top: 0;
+    color: var(--color-error);
 }
 
 .mensaje-exito {
