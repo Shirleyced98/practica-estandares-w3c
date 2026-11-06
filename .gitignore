@@ -1,0 +1,36 @@
+# Archivos del sistema operativo
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+
+# Editores e IDE
+.vscode/
+.idea/
+*.swp
+*~
+nbproject/private/
+
+# Dependencias y herramientas (por si se usan Lighthouse, linters, etc.)
+node_modules/
+package-lock.json
+npm-debug.log*
+*.log
+
+# Guía local de publicación: no se sube al repositorio
+README.md
+
+# El informe técnico va aparte del sitio (no se sube)
+*.docx
+*.pdf
+informe/
+lighthouse/
+*.report.html
+*.report.json
+capturas/
+
+# Archivos temporales de Office y bloqueos de OneDrive
+~$*
+*.tmp
