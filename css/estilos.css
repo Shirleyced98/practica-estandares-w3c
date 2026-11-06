@@ -1,0 +1,402 @@
+/* =========================================================
+   Hoja de estilos de la Práctica 1
+   - Unidades relativas (rem, em, %) para la tipografía
+   - Colores con contraste de al menos 4.5:1 (WCAG 1.4.3)
+   - Foco visible en todo elemento interactivo (WCAG 2.4.7)
+   - Objetivos táctiles de 24 x 24 px o más (WCAG 2.5.8)
+   - Legible a 320 px sin desplazamiento horizontal (WCAG 1.4.10)
+   ========================================================= */
+
+:root {
+    --color-texto: #1f2933;        /* sobre blanco: 14.6:1 */
+    --color-fondo: #ffffff;
+    --color-suave: #f3f6f4;
+    --color-primario: #1b5e20;     /* verde oscuro, sobre blanco: 7.9:1 */
+    --color-primario-claro: #e8f2e9;
+    --color-enlace: #0b4f8a;       /* azul, sobre blanco: 8.4:1 */
+    --color-error: #a4161a;        /* rojo oscuro, sobre blanco: 7.2:1 */
+    --color-exito: #1b5e20;
+    --color-foco: #b45309;         /* naranja oscuro para el contorno de foco */
+    --borde: #5f6b76;              /* bordes de campos: 5.4:1 (WCAG 1.4.11) */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;               /* respeta el tamaño de letra elegido por el usuario */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------- Enlace para saltar al contenido ---------- */
+.saltar {
+    position: absolute;
+    left: 0.5rem;
+    top: -3rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primario);
+    color: #ffffff;
+    z-index: 10;
+}
+
+.saltar:focus {
+    top: 0.5rem;
+}
+
+/* ---------- Encabezado y menú ---------- */
+.encabezado {
+    background-color: var(--color-primario);
+    color: #ffffff;
+}
+
+.encabezado__contenido {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.sitio {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.sitio a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.menu-boton {
+    display: none;                 /* solo aparece si JavaScript está activo y la pantalla es angosta */
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    color: var(--color-primario);
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.menu a {
+    display: inline-block;
+    min-height: 2.75rem;           /* 44 px: supera el mínimo de 24 px */
+    padding: 0.6rem 0.9rem;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 0.25rem;
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    text-decoration: underline;
+}
+
+.menu a[aria-current="page"] {
+    background-color: #ffffff;
+    color: var(--color-primario);
+    font-weight: bold;
+}
+
+/* ---------- Contenido principal ---------- */
+main {
+    display: block;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 2rem;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2rem;
+    line-height: 1.25;
+    color: var(--color-primario);
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    color: var(--color-primario);
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+a {
+    color: var(--color-enlace);
+}
+
+a:hover {
+    text-decoration-thickness: 0.15em;
+}
+
+section,
+article {
+    margin-bottom: 1.5rem;
+}
+
+.tarjeta {
+    padding: 1rem 1.25rem;
+    background-color: var(--color-suave);
+    border-left: 0.3rem solid var(--color-primario);
+    border-radius: 0.25rem;
+}
+
+.figura {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.figura figcaption {
+    font-size: 0.95rem;
+}
+
+.lista-enlaces li {
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- Tabla de horario ---------- */
+.tabla-contenedor {
+    overflow-x: auto;              /* la tabla se desplaza sola, la página no */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 36rem;
+}
+
+caption {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--borde);
+    text-align: left;
+}
+
+thead th {
+    background-color: var(--color-primario);
+    color: #ffffff;
+}
+
+tbody th {
+    background-color: var(--color-primario-claro);
+}
+
+/* ---------- Formulario ---------- */
+.formulario {
+    max-width: 36rem;
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label,
+legend {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.5rem;
+    font: inherit;
+    color: var(--color-texto);
+    background-color: #ffffff;
+    border: 2px solid var(--borde);
+    border-radius: 0.25rem;
+}
+
+fieldset {
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--borde);
+    border-radius: 0.25rem;
+}
+
+.opcion {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2rem;
+}
+
+.opcion input {
+    width: 1.5rem;                 /* 24 px: tamaño mínimo de WCAG 2.5.8 */
+    height: 1.5rem;
+    margin: 0;
+}
+
+.ayuda {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+}
+
+.error {
+    margin: 0.25rem 0 0;
+    font-weight: bold;
+    color: var(--color-error);
+}
+
+.error:empty {
+    display: none;
+}
+
+[aria-invalid="true"] {
+    border-color: var(--color-error);
+    border-width: 3px;
+}
+
+.resumen-errores {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--color-error);
+    border-radius: 0.25rem;
+}
+
+.mensaje-exito {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--color-exito);
+    background-color: var(--color-primario-claro);
+    border-radius: 0.25rem;
+}
+
+.resumen-errores:empty,
+.mensaje-exito:empty {
+    display: none;
+}
+
+.boton {
+    min-width: 6rem;
+    min-height: 2.75rem;
+    padding: 0.6rem 1.25rem;
+    font: inherit;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #134417;
+}
+
+.boton--secundario {
+    color: var(--color-primario);
+    background-color: #ffffff;
+}
+
+.boton--secundario:hover {
+    background-color: var(--color-primario-claro);
+}
+
+/* ---------- Pie de página ---------- */
+.pie {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+    background-color: var(--color-suave);
+    border-top: 1px solid #d0d7de;
+}
+
+.pie p {
+    margin: 0.25rem 0;
+}
+
+/* ---------- Foco visible (WCAG 2.4.7) ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-foco);
+    outline-offset: 2px;
+}
+
+.encabezado a:focus-visible,
+.encabezado button:focus-visible {
+    outline-color: #ffffff;
+    box-shadow: 0 0 0 5px var(--color-foco);
+}
+
+/* ---------- Diseño adaptable ---------- */
+@media (max-width: 40em) {
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    /* El botón del menú solo se muestra si JavaScript cargó (clase "js" en <html>) */
+    .js .menu-boton {
+        display: inline-block;
+    }
+
+    .js .menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .js .menu.menu--abierto {
+        display: flex;
+    }
+
+    .menu a {
+        display: block;
+    }
+}
+
+/* Respeta a quienes piden menos animaciones en su sistema */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
