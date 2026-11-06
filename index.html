@@ -1,43 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practica 1 html</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Práctica 1 de Desarrollo Basado en Plataformas: primera página web del grupo, corregida con los estándares de la W3C.">
+    <title>Inicio | Práctica 1 – Mi primera página web</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/menu.js" defer></script>
 </head>
 
 <body>
-    <h1> Mi primer web</h1>
+    <a class="saltar" href="#contenido">Saltar al contenido principal</a>
 
-    <nav>
-        <h2 style="color:rgb(33, 255, 251);text-align:center">Menú</h2>
-        <ul>
-            <li><a href="info.html">Información</a></li>
-            <li><a href="tabla.html">Tabla</a></li>
-            <li><a href="formulario.html">Formulario</a></li>
-        </ul>
-    </nav>
+    <header class="encabezado">
+        <div class="encabezado__contenido">
+            <p class="sitio"><a href="index.html">Práctica 1 · UTM</a></p>
+            <button type="button" class="menu-boton" aria-expanded="false" aria-controls="menu-principal" hidden>Menú</button>
+            <nav aria-label="Menú principal">
+                <ul class="menu" id="menu-principal">
+                    <li><a href="index.html" aria-current="page">Inicio</a></li>
+                    <li><a href="info.html">Información</a></li>
+                    <li><a href="tabla.html">Horario de clases</a></li>
+                    <li><a href="formulario.html">Formulario</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <img src="imagenes/arbol.jpg" alt="arbol" width="500" height="400"> <br>
+    <main id="contenido" tabindex="-1">
+        <h1>Mi primera página web</h1>
 
-    <P>
-        Este es el 
-        <a href="https://www.utm.edu.ec/"
-        target="_blank"
-        title="Enlace UTM"> enlace</a>
-        a la UTM
-    </P>
-    <a href="https://www.utm.edu.ec/">Ingreso a enlace utm</a><br>
+        <section aria-labelledby="titulo-sitio">
+            <h2 id="titulo-sitio">Sobre este sitio</h2>
+            <p>
+                Este sitio es la Práctica 1 de la asignatura Desarrollo Basado en Plataformas. Tiene cuatro páginas:
+                esta portada, una página de información, el horario de clases en una tabla y un formulario de
+                registro. Se corrigió para cumplir los estándares de la W3C: HTML válido, CSS en un archivo aparte,
+                etiquetas semánticas y las pautas de accesibilidad WCAG 2.2 nivel AA.
+            </p>
 
-    <a href="mailto:dgonzalez9296@utm.edu.ec" target="_blank">Direccionar a correo</a>
-    
-    <ol>
-        <li>Kevin Santiago Santacruz Zambrano</li>
-        <li>Daniela Gonzalez Ayala</li>
-        <li>Shirley Cedeño Poligua</li>
-    </ol>
+            <figure class="figura">
+                <img src="imagenes/arbol.jpg" width="236" height="236"
+                     alt="Ilustración de un árbol frondoso con hojas verdes y tronco café sobre un poco de césped.">
+                <figcaption>El árbol representa cómo crece un sitio web: desde una base sólida de estándares.</figcaption>
+            </figure>
+        </section>
 
+        <section aria-labelledby="titulo-enlaces">
+            <h2 id="titulo-enlaces">Enlaces de interés</h2>
+            <ul class="lista-enlaces">
+                <li>
+                    <a href="https://www.utm.edu.ec/" target="_blank" rel="noopener">
+                        Página oficial de la Universidad Técnica de Manabí (se abre en una pestaña nueva)</a>
+                </li>
+                <li>
+                    <a href="mailto:dgonzalez9296@utm.edu.ec">Escribir un correo a Daniela González (dgonzalez9296@utm.edu.ec)</a>
+                </li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="titulo-integrantes">
+            <h2 id="titulo-integrantes">Integrantes del grupo</h2>
+            <ol>
+                <li>Kevin Santiago Santacruz Zambrano</li>
+                <li>Daniela González Ayala</li>
+                <li>Shirley Liceth Cedeño Posligua</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>Universidad Técnica de Manabí · Facultad de Ciencias Informáticas</p>
+        <p>Desarrollo Basado en Plataformas · 2026</p>
+    </footer>
 </body>
 
 </html>
