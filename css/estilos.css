@@ -83,6 +83,9 @@ img {
 }
 
 .sitio a {
+    display: inline-block;
+    min-height: 2.75rem;           /* área táctil de 44 px (WCAG 2.5.8) */
+    padding: 0.6rem 0;
     color: #ffffff;
     text-decoration: none;
 }
@@ -185,6 +188,12 @@ article {
 
 .lista-enlaces li {
     margin-bottom: 0.5rem;
+}
+
+.lista-enlaces a {
+    display: inline-block;
+    min-height: 1.5rem;            /* al menos 24 px de alto (WCAG 2.5.8) */
+    padding: 0.25rem 0;
 }
 
 /* ---------- Tabla de horario ---------- */
