@@ -1,14 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Información sobre la Práctica 1 y los estándares de la W3C que se aplicaron al sitio.">
+    <title>Información | Práctica 1 – Mi primera página web</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/menu.js" defer></script>
 </head>
 
 <body>
-    <h1>Informacion no disponible por el momento</h1>
+    <a class="saltar" href="#contenido">Saltar al contenido principal</a>
+
+    <header class="encabezado">
+        <div class="encabezado__contenido">
+            <p class="sitio"><a href="index.html">Práctica 1 · UTM</a></p>
+            <button type="button" class="menu-boton" aria-expanded="false" aria-controls="menu-principal" hidden>Menú</button>
+            <nav aria-label="Menú principal">
+                <ul class="menu" id="menu-principal">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="info.html" aria-current="page">Información</a></li>
+                    <li><a href="tabla.html">Horario de clases</a></li>
+                    <li><a href="formulario.html">Formulario</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido" tabindex="-1">
+        <h1>Información de la práctica</h1>
+
+        <article class="tarjeta" aria-labelledby="titulo-practica">
+            <h2 id="titulo-practica">¿De qué trata la Práctica 1?</h2>
+            <p>
+                En la Práctica 1 se aprendieron las etiquetas básicas de HTML: títulos, párrafos, imágenes, enlaces,
+                listas, tablas y formularios. En la tarea de estándares W3C se volvió a revisar ese mismo sitio para
+                que no solo se vea bien, sino que también sea válido, accesible y funcione en cualquier dispositivo.
+            </p>
+        </article>
+
+        <section aria-labelledby="titulo-estandares">
+            <h2 id="titulo-estandares">Estándares que se aplicaron</h2>
+            <ul>
+                <li><strong>HTML Living Standard:</strong> estructura semántica y código sin errores en el Nu HTML Checker.</li>
+                <li><strong>CSS:</strong> estilos en un archivo externo, sin errores en el CSS Validation Service.</li>
+                <li><strong>WCAG 2.2 nivel AA:</strong> contraste suficiente, uso completo con teclado, foco visible y formularios con etiquetas.</li>
+                <li><strong>WAI-ARIA 1.2:</strong> el menú indica si está abierto o cerrado con <code>aria-expanded</code>.</li>
+                <li><strong>Diseño adaptable:</strong> el sitio se puede leer en una pantalla de 320 px sin desplazarse hacia los lados.</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="titulo-teclado">
+            <h2 id="titulo-teclado">Cómo usar el sitio con el teclado</h2>
+            <ul>
+                <li><kbd>Tab</kbd>: pasa al siguiente enlace, botón o campo.</li>
+                <li><kbd>Shift</kbd> + <kbd>Tab</kbd>: regresa al elemento anterior.</li>
+                <li><kbd>Enter</kbd>: abre un enlace o presiona un botón.</li>
+                <li><kbd>Esc</kbd>: cierra el menú en pantallas pequeñas.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>Universidad Técnica de Manabí · Facultad de Ciencias Informáticas</p>
+        <p>Desarrollo Basado en Plataformas · 2026</p>
+    </footer>
 </body>
 
 </html>
