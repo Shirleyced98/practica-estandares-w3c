@@ -1,50 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Horario de clases de lunes a viernes presentado en una tabla de datos accesible.">
+    <title>Horario de clases | Práctica 1 – Mi primera página web</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/menu.js" defer></script>
 </head>
 
 <body>
-    <table>
-        <caption> Horario de clases </caption>
-        <tr>
-            <td>Hora/dia </td>
-            <th>Lunes </th>
-            <th>Martes </th>
-            <th>Miercoles </th>
-            <th>Jueves </th>
-            <th>Viernes </th>
-        </tr>
-        <tr>
-            <th>7:00 </th>
-            <td>Frances </td>
-            <td>Ingles </td>
-            <td>Literatura </td>
-            <td>Ciudadania </td>
-            <td>Matematicas </td>
-        </tr>
+    <a class="saltar" href="#contenido">Saltar al contenido principal</a>
 
-        <tr>
-            <th>9:30 </th>
-            <td>Dibujo </td>
-            <td>Quimica </td>
-            <td>E. Fisica </td>
-            <td>Biologia </td>
-            <td>Emprendimiento </td>
-        </tr>
+    <header class="encabezado">
+        <div class="encabezado__contenido">
+            <p class="sitio"><a href="index.html">Práctica 1 · UTM</a></p>
+            <button type="button" class="menu-boton" aria-expanded="false" aria-controls="menu-principal" hidden>Menú</button>
+            <nav aria-label="Menú principal">
+                <ul class="menu" id="menu-principal">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="info.html">Información</a></li>
+                    <li><a href="tabla.html" aria-current="page">Horario de clases</a></li>
+                    <li><a href="formulario.html">Formulario</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <tr>
-            <th>12:00 </th>
-            <td>Fisica </td>
-            <td>Musica </td>
-            <td>Filosofia </td>
-            <td>F. Cristiana </td>
-            <td>Historia </td>
-        </tr>
-    </table>
+    <main id="contenido" tabindex="-1">
+        <h1>Horario de clases</h1>
+        <p>La tabla muestra las materias de cada día según la hora de inicio de la clase.</p>
+
+        <div class="tabla-contenedor" role="region" aria-labelledby="titulo-tabla" tabindex="0">
+            <table>
+                <caption id="titulo-tabla">Horario de clases de lunes a viernes</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Hora / día</th>
+                        <th scope="col">Lunes</th>
+                        <th scope="col">Martes</th>
+                        <th scope="col">Miércoles</th>
+                        <th scope="col">Jueves</th>
+                        <th scope="col">Viernes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><time datetime="07:00">7:00</time></th>
+                        <td>Francés</td>
+                        <td>Inglés</td>
+                        <td>Literatura</td>
+                        <td>Ciudadanía</td>
+                        <td>Matemáticas</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><time datetime="09:30">9:30</time></th>
+                        <td>Dibujo</td>
+                        <td>Química</td>
+                        <td>Educación Física</td>
+                        <td>Biología</td>
+                        <td>Emprendimiento</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><time datetime="12:00">12:00</time></th>
+                        <td>Física</td>
+                        <td>Música</td>
+                        <td>Filosofía</td>
+                        <td>Formación Cristiana</td>
+                        <td>Historia</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="pie">
+        <p>Universidad Técnica de Manabí · Facultad de Ciencias Informáticas</p>
+        <p>Desarrollo Basado en Plataformas · 2026</p>
+    </footer>
 </body>
 
 </html>
